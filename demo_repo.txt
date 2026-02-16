@@ -1,0 +1,129 @@
+  {
+    repo_name: 'FYP',
+    id: 'python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected',
+    message: "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.",
+    severity: 'WARNING',
+    confidence: 'LOW',
+    file_name: 'download_model.py',
+    file_type: 'py',
+    location: {
+      path: 'download_model.py',
+      url: 'https://github.com/ZayanShahid/FYP/blob/master/download_model.py#L12',
+      start_line: 12,
+      end_line: 12
+    },
+    cwe: [
+      {
+        cwe_id: 'CWE-939',
+        url: 'https://cwe.mitre.org/data/definitions/939.html',
+        desc: 'Improper Authorization in Handler for Custom URL Scheme'
+      },
+      {
+        cwe_id: 'CWE-642',
+        url: 'https://cwe.mitre.org/data/definitions/642.html',
+        desc: 'External Control of Critical State Data'
+      }
+    ],
+    owasp_llm: [
+      {
+        owasp_llm_id: 'LLM08',
+        owasp_llm_name: 'Excessive Agency',
+        description: 'LLM performs unintended privileged actions.'
+      } // Mapped due to cwe_id: 'CWE-642'
+    ],
+    mitre: [
+      {
+        owasp_llm_vulnerability_description: 'LLM autonomously performs harmful actions due to overprivileged access.',
+        mitre_id: 'T1660',
+        mitre_technique_name: 'Abuse AI-Generated Actions',
+        mitre_technique_url: 'https://atlas.mitre.org/techniques/T1660',
+        owasp_llm_vulnerability_title: 'Excessive Agency'
+      } // Mapped due to cwe_id: 'CWE-642'
+    ]
+  }
+    {
+    repo_name: 'Daily-Task',
+    id: 'python.lang.security.audit.formatted-sql-query.formatted-sql-query',
+    message: 'Detected possible formatted SQL query. Use parameterized queries instead.',
+    severity: 'WARNING',
+    confidence: 'LOW',
+    file_name: 'test.py',
+    file_type: 'py',
+    location: {
+      path: 'test.py',
+      url: 'https://github.com/ZayanShahid/Daily-Task/blob/master/test.py#L17',
+      start_line: 17,
+      end_line: 17
+    },
+    cwe: [
+      {
+        cwe_id: 'CWE-89',
+        url: 'https://cwe.mitre.org/data/definitions/89.html',
+        desc: "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+      },
+      {
+        cwe_id: 'CWE-829',
+        url: 'https://cwe.mitre.org/data/definitions/829.html',
+        desc: 'Inclusion of Functionality from Untrusted Control Sphere'
+      }
+    ],
+    owasp_llm: [
+      {
+        owasp_llm_id: 'LLM05',
+        owasp_llm_name: 'Supply Chain Vulnerabilities',
+        description: 'Compromised pre-trained models, datasets, or plugins.'
+      } // generted beacise of CWE-829
+    ],
+    mitre: [
+      {
+        owasp_llm_vulnerability_description: 'Exploiting vulnerabilities in pre-trained models, datasets, or dependencies.',
+        mitre_id: 'T1655',
+        mitre_technique_name: 'Compromise AI Supply Chain',
+        mitre_technique_url: 'https://atlas.mitre.org/techniques/T1655',
+        owasp_llm_vulnerability_title: 'Supply Chain Vulnerabilities'
+      } // generted beacise of CWE-829
+    ]
+  },
+  {
+    repo_name: 'Daily-Task',
+    id: 'python.lang.security.audit.formatted-sql-query.formatted-sql-query',
+    message: 'Detected possible formatted SQL query. Use parameterized queries instead.',
+    severity: 'WARNING',
+    confidence: 'LOW',
+    file_name: 'test2.py',
+    file_type: 'py',
+    location: {
+      path: 'test2.py',
+      url: 'https://github.com/ZayanShahid/Daily-Task/blob/master/test2.py#L91',
+      start_line: 91,
+      end_line: 91
+    },
+    cwe: [
+      {
+        cwe_id: 'CWE-939',
+        url: 'https://cwe.mitre.org/data/definitions/939.html',
+        desc: 'Improper Authorization in Handler for Custom URL Scheme'
+      },
+      {
+        cwe_id: 'CWE-642',
+        url: 'https://cwe.mitre.org/data/definitions/642.html',
+        desc: 'External Control of Critical State Data'
+      } 
+    ],
+    owasp_llm: [
+      {
+        owasp_llm_id: 'LLM08',
+        owasp_llm_name: 'Excessive Agency',
+        description: 'LLM performs unintended privileged actions.'
+      }  // Mapped due to cwe_id: 'CWE-642'
+    ],
+    mitre: [
+      {
+        owasp_llm_vulnerability_description: 'LLM autonomously performs harmful actions due to overprivileged access.',
+        mitre_id: 'T1660',
+        mitre_technique_name: 'Abuse AI-Generated Actions',
+        mitre_technique_url: 'https://atlas.mitre.org/techniques/T1660',
+        owasp_llm_vulnerability_title: 'Excessive Agency'
+      }  // Mapped due to cwe_id: 'CWE-642'
+    ]
+  }
